@@ -1,0 +1,48 @@
+/* @import './base.css'; */
+/* :root {
+  fColorL: #4c007d;
+  Scolor: #000000;
+  Tcolor: #08b6ff;
+
+
+} */
+
+*{
+  scroll-behavior: smooth;
+}
+body {
+  background: linear-gradient(70deg, #250C6F, #000000);
+  font-family: sans-serif;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  /* margin: 0 auto; */
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: rgb(63, 127, 204);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+/* 
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */

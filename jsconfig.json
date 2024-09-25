@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "primevue/*": ["./node_modules/primevue/src/*"],
+      "tailwindcss-primeui/*": ["./node_modules/tailwindcss-primeui/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

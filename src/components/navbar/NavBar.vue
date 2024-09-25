@@ -1,0 +1,300 @@
+<template>
+    <nav>
+        <div class="logo">
+            <img src="./logo/1-removebg-preview.png" alt="Logo">
+        </div>
+        <toggleMenu :class="{ 'is-active': isMenuActive }" class="menu" />
+        <ul>
+            <li><a href="#">{{ $t('Home') }}</a></li>
+            <li><a href="#">{{ $t('About') }}</a></li>
+            <li><a href="#">{{ $t('Courses') }}</a></li>
+            <li><a href="#">{{ $t('Contacts') }}</a></li>
+        </ul>
+        <div class="btns">
+            <div class="lang-toggle">
+                <select :id="globe" v-model="currentLocale" @change="changeLanguage">
+                    <option value="en">
+                        <img src="./logo/eng.png" alt="">
+                        English
+                    </option>
+                    <option value="ru">Русский</option>
+                    <option value="uz">Oʻzbekcha</option>
+                </select>
+            </div>
+            <btnNav class="btn-nav" />
+        </div>
+        <button class="menu-toggle" @click="toggleMenu">☰</button> <!-- Кнопка для переключения меню -->
+    </nav>
+</template>
+
+<style lang="scss" scoped>
+@mixin flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    display: none;
+}
+
+nav {
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .menu-toggle {
+        display: none; // Скрыть кнопку по умолчанию
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            select {
+                // transform: scale(0);
+                padding: 10px;
+                outline: 0;
+                border-radius: 10px;
+                border: none;
+                color: #000;
+                background: #DAF0FF;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            label {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 999;
+            }
+        }
+    }
+
+    .logo {
+        @include flex-center();
+        filter: drop-shadow(0 0 10px purple);
+        border: none;
+        border-radius: 1px;
+        // padding: 5px 2px;
+        // background: #FFFFF3;
+        position: relative;
+        overflow: hidden;
+        border-radius: 28px;
+        // overflow: hidden;
+        outline: none;
+
+        &::before {
+            content: '';
+            position: relative;
+            width: 50px;
+            height: 70px;
+            background-image: linear-gradient(120deg,
+                    rgba(255, 255, 255, 0) 30%,
+                    rgba(255, 255, 255, .8),
+                    rgba(255, 255, 255, 0) 70%);
+            // top: 70px;
+            left: -100px;
+            animation: shine 3s infinite linear;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100px
+            }
+
+            20% {
+                left: 100%
+            }
+
+            100% {
+                left: 100%
+            }
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+        }
+
+    }
+
+    ul {
+        list-style: none;
+        @include flex-center();
+        gap: 20px;
+
+        // font-family: 'Courier New', Courier, monospace;
+
+        li {
+            font-size: 20px;
+
+            a {
+                color: #fff;
+                font-weight: 600;
+
+                &:hover {
+                    color: rgb(175, 46, 175);
+                    filter: drop-shadow(0 0 20px #fff);
+                }
+            }
+
+        }
+
+        .btn-nav {
+            cursor: pointer;
+        }
+    }
+
+    // @media (min-width: 390px) {
+    //    nav{
+    //     width: 100%;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     gap: 20px;
+    //     .logo{
+    //         z-index: 9999;
+    //     }
+    //     ul{
+    //        li{
+    //         display: none;
+    //        }
+    //     }
+    //    }
+    // }
+}
+
+@media (max-width: 480px) {
+    nav {
+        max-width: 480px;
+
+        toggleMenu.is-active {
+            display: flex; // Показать меню, когда оно активно
+        }
+
+        .logo {
+            @include flex-center();
+            filter: drop-shadow(0 0 10px purple);
+            border: none;
+            border-radius: 1px;
+            // padding: 5px 2px;
+            // background: #FFFFF3;
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px;
+            // overflow: hidden;
+            outline: none;
+
+            // &::before {
+            //     content: '';
+            //     position: absolute;
+            //     width: 50px;
+            //     height: 70px;
+            //     background-image: linear-gradient(120deg,
+            //             rgba(255, 255, 255, 0) 30%,
+            //             rgba(255, 255, 255, .8),
+            //             rgba(255, 255, 255, 0) 70%);
+            //     top: -50px;
+            //     left: -100px;
+            //     animation: shine 3s infinite linear;
+            // }
+
+            // @keyframes shine {
+            //     0% {
+            //         left: -100px
+            //     }
+
+            //     20% {
+            //         left: 100%
+            //     }
+
+            //     100% {
+            //         left: 100%
+            //     }
+            // }
+
+            img {
+                width: 250px;
+                height: 250px;
+            }
+
+        }
+    }
+
+    .menu-toggle {
+        display: block; // Показать кнопку на мобильных устройствах
+    }
+
+
+    ul {
+        display: none;
+        li{
+            display: none;
+        } // Скрыть меню по умолчанию
+    }
+
+    .btns {
+        flex-direction: column;
+
+        .btn-nav {
+            display: none; // Вертикальное расположение кнопок
+        }
+
+        .logo {
+            width: 100%; // Адаптивная ширина логотипа
+
+            img {
+                width: 150px; // Уменьшить размер логотипа на мобильных устройствах
+                height: auto; // Автоматическая высота
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; // Показать кнопку на мобильных устройствах
+    }
+}</style>
+
+<script>
+import btnNav from './button/btnNav.vue';
+import ToggleMenu from './ToggleMenu.vue';
+export default {
+    name: 'NavBar',
+    components: {
+        btnNav,
+        ToggleMenu,
+    },
+    data() {
+        return {
+            currentLocale: 'ru',
+            isMenuActive: false
+        }
+    },
+    methods: {
+        changeLanguage() {
+            this.$i18n.locale = this.currentLocale;
+        },
+        toggleMenu() {
+            this.isMenuActive = !this.isMenuActive; // Переключение состояния меню
+        }
+    }
+}
+</script>
