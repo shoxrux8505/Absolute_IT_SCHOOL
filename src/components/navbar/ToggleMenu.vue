@@ -3,9 +3,9 @@
     <div class="menu">
         <ul> <!-- Добавлен класс для активного состояния меню -->
             <li><a href="#">{{ $t('Home') }}</a></li>
-            <li><a href="#">{{ $t('About') }}</a></li>
-            <li><a href="#">{{ $t('Courses') }}</a></li>
-            <li><a href="#">{{ $t('Contacts') }}</a></li>
+            <li><a href="#main">{{ $t('About') }}</a></li>
+            <li><a href="#courses">{{ $t('Courses') }}</a></li>
+            <li><a href="#form">{{ $t('Contacts') }}</a></li>
 
         </ul>
         <div class="btns">
@@ -27,30 +27,31 @@ export default {
     position: absolute;
     top: 80px;
     left: 250px;
-    width:200px;
+    width: 200px;
     padding: 20px;
-    height:400px;
+    height: 400px;
     display: flex;
     align-items: start;
     justify-content: center;
-    flex-direction: column  ;
-    // background: url('../teachers/teamImg/download.webp') cover / center;
-    background: purple;
+    flex-direction: column;
+    transition: 0.5s ease;
+    // background: url('../teachers/teamImg/download.webp') cover ;
+    background: linear-gradient(180deg, purple, royalblue, #000);
     z-index: 9999;
 }
 
 ul {
     list-style: none;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     gap: 20px;
 
     // font-family: 'Courier New', Courier, monospace;
-    &.is-active {
-        display: flex; // Показать меню, когда оно активно
-    }
+    // &.is-active {
+    //     display: flex; // Показать меню, когда оно активно
+    // }
 
     li {
         font-size: 20px;

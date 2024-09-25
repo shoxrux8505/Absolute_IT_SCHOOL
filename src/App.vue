@@ -9,13 +9,13 @@
   </div>
   <div v-else>
     <NavBar class="navbar" :class="{ sticky: isSticky }" />
-    <MainContent class="main-content" />
+    <MainContent id="main"class="main-content" />
     <main>
-      <h2>Наше направление</h2>
+      <h2 class="akks">Наше направление</h2>
       <p>
         В месте с нашими направлениями становитесь лучше и развивайтесь с нами
       </p>
-      <Courses class="courses" />
+      <Courses id="courses"class="courses" />
     </main>
     <section>
       <h2 style="padding: 10px;">Доступные цены рассрочка и кредит - помогут скорее начать обучение с нами.</h2>
@@ -97,9 +97,6 @@ export default {
   box-sizing: border-box;
 }
 @media (max-width: 480px){
-  div{
-    // text-align: center;
-  }
 }
 .loading {
   width: 100%;
@@ -126,7 +123,11 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  .akks{
+    position: relative;
+    top: 20px;
+    margin-top: 15px
+  }
   h2 {
     font-size: 48px;
     color: #ffff;
@@ -137,6 +138,8 @@ main {
     color: #fff;
     font-size: 20px;
     text-align: center;
+    position: relative;
+    top: 15px;
   }
 
   .courses {
@@ -177,6 +180,7 @@ div {
   left: 0;
   width: 100%;
   height: 100px;
+  // padding: 5px 7px;
   transition: top 0.3s;
   transition: background-color 0.3s;
 }
@@ -193,12 +197,19 @@ div {
   /* Убедитесь, что панель выше других элементов */
 }
 @media (max-width:480){
+  .navbar{
+    width: 480px;
+  }
   .sticky{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
     
+  }
+  h2{
+    transform: scale(0.8);
   }
 }
 .main-content {

@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <TeamCard/>
+        <TeamCard />
         <!-- <div class="tech-card" v-for="teach in team" :key="teach.id">
             <div class="img"></div>
             <div class="text">
@@ -18,9 +18,9 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap:20px;
+    gap: 20px;
     flex-wrap: wrap;
-
+}
     .tech-card {
         display: flex;
         align-items: start;
@@ -38,6 +38,7 @@
 
         .text {
             font-family: 'Courier New', Courier, monospace;
+
             h2 {
                 color: #fff;
             }
@@ -50,6 +51,34 @@
             }
         }
     }
+
+    @media (max-width: 480px) {
+        .content {
+            width: 100%;
+            padding: 60px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+            .tech-card {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 5px;
+        filter: drop-shadow(0 0 10px #CC37F6);
+
+        .img {
+            width: 268px;
+            height: 268px;
+            background: #D9D9D9;
+            border-radius: 25px;
+        }
+
+        }
+    }
 }
 </style>
 <script>
@@ -59,6 +88,6 @@ export default {
     components: {
         TeamCard
     },
-    
+
 }
 </script>

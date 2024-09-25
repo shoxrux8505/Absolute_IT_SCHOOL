@@ -127,18 +127,20 @@
 @media (max-width: 480px) {
     .form-content {
     width: 100%;
-    padding: 20px;
+    // padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
     flex-direction: column-reverse;
     .img-content{
+        position: relative;
+        top: 15px;
         transform: scale(0.8);
     }
 }
 .form-box{
-    transform: scale(0.7);
+    transform: scale(0.6);
 }
 
 }

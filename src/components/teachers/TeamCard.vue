@@ -76,7 +76,7 @@ export default {
                     id: 3,
                     name: 'Abdullaev Aslidin',
                     description: 'Mentor Graphic Designer',
-                    img: Asil,  
+                    img: Asil,
                 },
                 // {
                 //     id: 4,
@@ -90,14 +90,29 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-/* From Uiverse.io by Daniel1227k */
 .card {
     position: relative;
     width: 350px;
-    height: 450px;
+    height: 430px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 480px) {
+        .card {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }   
 }
 
 .card::before {

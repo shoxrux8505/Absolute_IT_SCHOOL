@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <div class="text-content">
-            <p>{{ $t('International IT School') }}</p>
+            <p class="prehead">{{ $t('International IT School') }}</p>
             <h1>
                 {{ $t('Start') }} {{ $t('your') }} {{ $t('journey') }} {{ $t('into') }} {{ $t('the') }} {{ $t('world')
                 }} {{ $t('of') }}
@@ -91,29 +91,58 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
+        flex-direction: column-reverse;
 
         .img-content {
             transform: scale(0.5);
             position: absolute;
-            opacity: 0.5;
+            // opacity: 0.5;
             z-index: -1;
+            animation-name: globus;
+            animation-duration: 5s;
+            animation-delay: 0.5;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            img{
+                transform: scale(0.9)
+                translateX(70px)
+            }
+            @keyframes globus {
+                0%{
+                    // transform: rotate(0deg);
+                    filter: drop-shadow(0 0 0px #000000);
+                }
+                100%{
+                    // transform: rotate(360deg);
+                    filter: drop-shadow(0 0 10px royalblue);
+                    opacity: 0.5;
+                }                
+            }
         }
 
         .text-content {
-            // position: relative;
-            // top: -50px;
+          padding: 15px 20px;
             display: flex;
             align-items: start;
             flex-direction: column;
             justify-content: center;
-
+            .prehead{
+                position: relative;
+                top: 15px;
+                font-size: 15px;
+            }
             p {
                 color: #fff;
+                font-size: 15px;
+                position: relative;
+                left: -50px;
+                
             }
 
             h1 {
-                font-size: 30px;
+                position: relative;
+                left: -50px;
+                font-size: 20px;
                 color: #fff;
 
                 span {
@@ -121,6 +150,7 @@ main {
                     -webkit-background-clip: text;
                     background-clip: text; // {{ edit_1 }} Добавлено для совместимости
                     -webkit-text-fill-color: transparent;
+
                 }
             }
         }
