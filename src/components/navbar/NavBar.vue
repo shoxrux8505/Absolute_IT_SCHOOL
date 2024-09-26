@@ -13,10 +13,7 @@
         <div class="btns">
             <div class="lang-toggle">
                 <select :id="globe" v-model="currentLocale" @change="changeLanguage">
-                    <option value="en">
-                        <img src="./logo/eng.png" alt="">
-                        EN
-                    </option>
+                    <option value="en"> EN</option>
                     <option value="ru">RU</option>
                     <option value="uz">UZ</option>
                 </select>
@@ -151,6 +148,7 @@ nav {
         list-style: none;
         @include flex-center();
         gap: 20px;
+
         li {
             font-size: 20px;
 

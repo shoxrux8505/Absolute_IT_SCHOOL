@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // Добавлено для исправления ошибки
     "paths": {
       "@/*": ["./src/*"],
       "primevue/*": ["./node_modules/primevue/src/*"],

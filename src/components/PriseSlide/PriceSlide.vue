@@ -1,11 +1,6 @@
 <template>
   <div class="slider-container">
-    <swiper 
-    :slides-per-view="4" 
-    :space-between="20"
-     :pagination="{ clickable: true }"
-      :modules="modules"
-      :breakpoints="{
+    <swiper :slides-per-view="4" :space-between="20" :pagination="{ clickable: true }" :modules="modules" :breakpoints="{
       320: { // for mobile screens
         slidesPerView: 1,
         spaceBetween: 10
@@ -22,8 +17,7 @@
         slidesPerView: 4,
         spaceBetween: 20
       }
-    }"
-      class="mySwiper">
+    }" class="mySwiper">
       <!-- Наше направление -->
       <swiper-slide class="swiper-cards" v-for="course in courses" :key="course.id">
         <div class="card">
@@ -159,7 +153,6 @@ export default {
 .swiper {
   width: 100%;
   height: 100%;
-
 }
 
 .swiper-slide {
@@ -170,7 +163,6 @@ export default {
   justify-content: center;
   align-items: center;
 
-
   .card {
     width: 350px;
     display: flex;
@@ -178,10 +170,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     row-gap: 10px;
-    // border: 2px solid #CC37F6;
     padding: 5px 7px;
-    // filter: drop-shadow(0 0 2px #CC37F6);/
-
 
     .card-btn {
       width: 170px;
@@ -190,7 +179,7 @@ export default {
       border: none;
       outline: 0;
       cursor: pointer;
-      transform: 0.5s ease;
+      transition: 0.5s ease;
       border-radius: 10px;
 
       &:hover {
@@ -202,14 +191,13 @@ export default {
         font-size: 17px;
         transition: all 0.5s ease;
       }
-
     }
 
     .img {
       width: 270px;
       height: 270px;
-      // background: #C4C4C4;
       border-radius: 16px;
+      position: relative;
 
       .timer {
         padding: 5px 10px;
@@ -219,7 +207,6 @@ export default {
         margin-top: 5px;
         margin-left: 5px;
         background: #fff;
-        // transform: rotate(-10deg);
 
         span {
           color: red;
@@ -246,13 +233,10 @@ export default {
         cursor: pointer;
       }
 
-      transition: all 0.5s ease;
-
       &:hover img {
         transform: scale(1.1);
       }
     }
-
 
     .text-part {
       display: flex;
@@ -280,7 +264,6 @@ export default {
             justify-content: center;
             flex-direction: column;
             row-gap: 2px;
-
 
             small {
               color: red;
@@ -317,10 +300,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     row-gap: 10px;
-    // border: 2px solid #CC37F6;
     padding: 5px 7px;
-    // filter: drop-shadow(0 0 2px #CC37F6);/
-
 
     .card-btn {
       width: 170px;
@@ -329,7 +309,7 @@ export default {
       border: none;
       outline: 0;
       cursor: pointer;
-      transform: 0.5s ease;
+      transition: 0.5s ease;
       border-radius: 10px;
 
       &:hover {
@@ -341,14 +321,13 @@ export default {
         font-size: 17px;
         transition: all 0.5s ease;
       }
-
     }
 
     .img {
       width: 270px;
       height: 270px;
-      // background: #C4C4C4;
       border-radius: 16px;
+      position: relative;
 
       .timer {
         padding: 5px 10px;
@@ -360,7 +339,6 @@ export default {
         margin-left: 100px;
         background: #fff;
         z-index: 99;
-        // transform: rotate(-10deg);
 
         span {
           color: red;
@@ -388,13 +366,10 @@ export default {
         transform: scale(0.8);
       }
 
-      transition: all 0.5s ease;
-
       &:hover img {
         transform: scale(1);
       }
     }
-
 
     .text-part {
       transform: scale(0.9);
@@ -425,7 +400,6 @@ export default {
             flex-direction: column;
             row-gap: 2px;
 
-
             small {
               color: red;
               transform: scale(0.8);
@@ -436,5 +410,4 @@ export default {
     }
   }
 }
-
 </style>
